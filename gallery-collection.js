@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import {LitElement, css, html} from 'lit-element';
 
 class GalleryCollection extends LitElement {
   constructor() {
@@ -47,6 +47,28 @@ class GalleryCollection extends LitElement {
           `)}              
         </div>      
       </div>
+    `;
+  }
+
+  static get styles() {
+    return css`
+      .gallery-collection > .layout { 
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 3rem;                
+       }
+
+      @media (min-width: 600px) {
+       .gallery-collection > .layout { 
+          grid-template-columns: repeat(2, 1fr);
+       }
+      }
+       
+      @media (min-width: 1000px) {
+       .gallery-collection > .layout { 
+          grid-template-columns: repeat(3, 1fr);
+       }
+      }
     `;
   }
 }
