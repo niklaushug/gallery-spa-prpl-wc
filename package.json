@@ -1,0 +1,14 @@
+{
+  "name": "lit-element-and-routing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "es-dev-server": "^2.0.2"
+  }
+}
