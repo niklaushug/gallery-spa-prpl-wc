@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 
-class GalleryList extends LitElement {
+class GalleryCollection extends LitElement {
   constructor() {
     super();
     this.description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit';
@@ -33,17 +33,17 @@ class GalleryList extends LitElement {
 
   render() {
     return html`
-      <div class="gallery-list">          
+      <div class="gallery-collection">          
         <h2>${this.name}</h2>
         <p>${this.description}</p>
         <div class="layout">               
           ${this.images.map((item) => html`
-            <gallery-item
+            <gallery-image
               artist="${item.artist}"
               artistLink="${item.artistLink}"
               description="${item.description}"
               url="${item.url}"
-            ></gallery-item>                       
+            ></gallery-image>                       
           `)}              
         </div>      
       </div>
@@ -51,4 +51,4 @@ class GalleryList extends LitElement {
   }
 }
 
-customElements.define('gallery-list', GalleryList);
+customElements.define('gallery-collection', GalleryCollection);

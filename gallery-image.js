@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 
-class GalleryItem extends LitElement {
+class GalleryImage extends LitElement {
   constructor() {
     super();
     this.artist = 'Magic penguin';
@@ -20,7 +20,7 @@ class GalleryItem extends LitElement {
 
   render() {
     return html`
-      <figure class="gallery-item">
+      <figure class="gallery-image">
         <img src="${this.url}" alt="picture of ${this.artist} on unsplash.com">
         <figcaption>${this.description}</figcaption>      
       </figure>
@@ -28,4 +28,4 @@ class GalleryItem extends LitElement {
   }
 }
 
-customElements.define('gallery-item', GalleryItem);
+customElements.define('gallery-image', GalleryImage);
