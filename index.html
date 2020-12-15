@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Routing with lit-element and lit-element-router</title>
+    <script type="module" src="app-layout.js"></script>
+    <script type="module" src="app-main.js"></script>
+    <script type="module" src="app-link.js"></script>
     <script type="module" src="gallery-collection.js"></script>
     <script type="module" src="gallery-image.js"></script>
     <style>
         body {
-            background-color: honeydew;
             margin: 0;
-            padding: 5rem 3rem 3rem 3rem;
-        }
-
-        h1 {
-            margin: 0;
+            font-family: Verdana, sans-serif;
         }
     </style>
 </head>
 <body>
-    <h1>Routing with lit-element and lit-element-router</h1>
-    <gallery-collection name="Lovely trees" description="Would like to stroll through the forest."></gallery-collection>
+    <gallery-app></gallery-app>
 </body>
 </html>
 
