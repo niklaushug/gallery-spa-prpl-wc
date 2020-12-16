@@ -1,5 +1,6 @@
 import {LitElement, html, css} from 'lit-element';
-import collections from './collections'
+import collections from './collections';
+import './gallery-collection';
 
 class PageGallery extends LitElement {
   constructor() {

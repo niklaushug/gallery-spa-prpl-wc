@@ -1,4 +1,5 @@
 import {LitElement, css, html} from 'lit-element';
+import './gallery-image';
 
 class GalleryCollection extends LitElement {
   constructor() {

@@ -4,10 +4,7 @@ const cacheName = 'gallery-spa-prpl-wc-v1.0.0';
 
 const contentToCache = [
   '/index.html',
-  '/app.js',
-  '/app-layout.js',
-  '/gallery-collection.js',
-  '/gallery-image.js',
+  '/base.js',
   '/page-home.js',
   '/page-info.js',
   '/page-gallery.js'
