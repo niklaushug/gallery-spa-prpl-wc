@@ -3,9 +3,9 @@ import { LitElement, css, html } from 'lit-element';
 class GalleryImage extends LitElement {
   constructor() {
     super();
-    this.artist = 'Magic penguin';
-    this.artistLink = '@magicpenguin';
-    this.description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit';
+    this.artist = '[artist]';
+    this.artistLink = '[artistLink]';
+    this.description = '[description]';
     this.url = 'https://via.placeholder.com/300';
   }
 

@@ -3,24 +3,24 @@ import {LitElement, css, html} from 'lit-element';
 class GalleryCollection extends LitElement {
   constructor() {
     super();
-    this.description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit';
-    this.name = 'Lorem ipsum ';
+    this.description = '[description]';
     this.images = [{
-        artist: 'Victoria Palacios',
-        artistLink: '@toriamia',
-        description: 'Glory and wonder here on little old earth. This shot is from a particularly magical hike through the Sequoia National Forest. We were so up high in the mountains that the clouds decided to settle around us and create a mystical fog all around us.',
-        url: 'https://images.unsplash.com/photo-1508788397430-55907b348ba8',
-      }, {
-        artist: 'Andrew Neel',
-        artistLink: '@andrewtneel',
-        description: '',
-        url: 'https://images.unsplash.com/photo-1477768663691-75454fd8e870',
-      }, {
-        artist: 'Casey Horner',
-        artistLink: '@mischievous_penguins',
-        description: 'Morning mystic',
-        url: 'https://images.unsplash.com/photo-1514509353532-1419c0935d72',
-      }]
+      artist: '[artist 1]',
+      artistLink: '[artistLink 1]',
+      description: '[description 1]',
+      url: 'https://via.placeholder.com/150x300',
+    }, {
+      artist: '[artist 2]',
+      artistLink: '',
+      description: '[description 2]',
+      url: 'https://via.placeholder.com/400',
+    }, {
+      artist: '[artist 3]',
+      artistLink: '[artistLink 3]',
+      description: '',
+      url: 'https://via.placeholder.com/300x150',
+    }];
+    this.name = '[name]';
   }
 
   static get properties() {
@@ -33,7 +33,7 @@ class GalleryCollection extends LitElement {
 
   render() {
     return html`
-      <div class="gallery-collection">          
+      <div class="gallery-collection">              
         <h2>${this.name}</h2>
         <p>${this.description}</p>
         <div class="layout">               
