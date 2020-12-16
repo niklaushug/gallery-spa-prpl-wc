@@ -1,8 +1,8 @@
 import {LitElement, html, css} from 'lit-element';
 import { router } from 'lit-element-router';
 
-// import './app-link';
-// import './app-main';
+import './app-link';
+import './app-main';
 
 class AppLayout extends router(LitElement) {
   static get properties() {
@@ -56,12 +56,11 @@ class AppLayout extends router(LitElement) {
       
       <main class="content">
         <app-main active-route=${this.route}>
-            <h1 route='home'>Home</h1>
-            <h1 route='info'>Info</h1>
-            <h1 route='gallery'>Gallery ${this.params.id} </h1>
+            <page-home route='home'></page-home>
+            <page-info route='info'></page-info>
+            <page-gallery route='gallery' id="${this.params.id}"></page-gallery>
             <h1 route='not-found'>Not Found </h1>
-        </app-main>
-        <gallery-collection name="Lovely trees" description="Would like to stroll through the forest."></gallery-collection>
+        </app-main>        
       </main>
     </div>
     `;
@@ -92,4 +91,4 @@ class AppLayout extends router(LitElement) {
   }
 }
 
-customElements.define('gallery-app', AppLayout);
+customElements.define('app-layout', AppLayout);
