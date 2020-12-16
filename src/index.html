@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Gallery App</title>
-    <script type="module" src="/base.js"></script>
+    <script defer type="module" src="/base.js"></script>
     <script defer type="module" src="/page-home.js"></script>
     <script defer type="module" src="/page-info.js"></script>
     <script defer type="module" src="/page-gallery.js"></script>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
-            margin: 0;
+            background-color: honeydew;
+            box-shadow:
+                inset 0 40px 0 darkolivegreen,
+                inset 0 -10px 0 darkolivegreen;
             font-family: Verdana, sans-serif;
+            min-height: 100%;
+            margin: 0;
         }
     </style>
 </head>
