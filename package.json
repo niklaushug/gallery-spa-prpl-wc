@@ -4,8 +4,11 @@
   "description": "Gallery SPA consist of Lit Element based Web Components. It implements the methodology PRPL to get interaction readiness as early as possible.",
   "main": "index.js",
   "scripts": {
-    "server": "es-dev-server --app-index index.html --watch --open",
-    "build": "webpack --config webpack.config.js"
+    "start": "npm run server & npm run watch",
+    "build": "webpack --config webpack.config.js",
+    "deploy": "npm run build && surge .",
+    "server": "es-dev-server --config",
+    "watch": "webpack --config webpack.config.js --watch"
   },
   "author": {
     "name": "Niklaus Hug",
