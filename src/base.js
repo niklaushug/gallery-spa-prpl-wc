@@ -1,4 +1,4 @@
-import './app-layout.js';
+import './app-routes.js';
 
 // Register service worker if browser supports it.
 if('serviceWorker' in navigator) {

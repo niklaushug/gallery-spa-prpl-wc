@@ -1,49 +1,8 @@
-import {LitElement, html, css} from 'lit-element';
-import { router } from 'lit-element-router';
-
+import {LitElement, css, html} from 'lit-element';
+import { outlet } from 'lit-element-router';
 import './app-link';
-import './app-main';
 
-class AppLayout extends router(LitElement) {
-  static get properties() {
-    return {
-      route: { type: String },
-      params: { type: Object },
-      query: { type: Object }
-    };
-  }
-
-  static get routes() {
-    return [{
-      name: 'home',
-      pattern: '',
-      data: { title: 'Home' }
-    }, {
-      name: 'info',
-      pattern: 'info'
-    }, {
-      name: 'gallery',
-      pattern: 'gallery/:id'
-    }, {
-      name: 'not-found',
-      pattern: '*'
-    }];
-  }
-
-  constructor() {
-    super();
-    this.route = '';
-    this.params = {};
-    this.query = {};
-  }
-
-  router(route, params, query, data) {
-    this.route = route;
-    this.params = params;
-    this.query = query;
-    console.log(route, params, query, data);
-  }
-
+class AppLayout extends outlet(LitElement) {
   render() {
     return html`
     <div class="app-layout">
@@ -53,14 +12,11 @@ class AppLayout extends router(LitElement) {
         <app-link href="/gallery/1">Gallery 1</app-link>
         <app-link href="/gallery/2">Gallery 2</app-link>        
       </div>
-      
+            
+      <slot name="region-top"></slot>
+            
       <main class="content">
-        <app-main active-route=${this.route}>
-            <page-home route='home'></page-home>
-            <page-info route='info'></page-info>
-            <page-gallery route='gallery' id="${this.params.id}"></page-gallery>
-            <h1 route='not-found'>Not Found </h1>
-        </app-main>        
+        <slot></slot>
       </main>
     </div>
     `;
