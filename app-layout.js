@@ -67,7 +67,7 @@ class AppLayout extends router(LitElement) {
   }
 
   static get styles() {
-    return css`
+    return css`    
       .app-layout {
         display: flex;
         flex-direction: column;
@@ -85,7 +85,9 @@ class AppLayout extends router(LitElement) {
       .app-layout > .content {
         background-color: honeydew;
         padding: 5rem 3rem 3rem 3rem;
-        flex-grow: 1;        
+        height: calc(100vh - 40px);  
+        overflow-y: auto;    
+        border-bottom: 10px solid darkolivegreen;  
       }
     `;
   }
