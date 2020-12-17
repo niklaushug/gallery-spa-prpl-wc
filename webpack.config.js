@@ -21,6 +21,7 @@ module.exports = {
         { from: "src/index.html", to: "." },
         { from: "src/js/service-worker.js", to: "." },
         { from: "src/img/", to: "img/" },
+        { from: "src/data/", to: "data/" },
       ],
     }),
   ],

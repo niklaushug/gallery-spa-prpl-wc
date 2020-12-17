@@ -1,4 +1,4 @@
-const collections = {
+{
   "1":{
     "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit",
     "name":"Trees",
@@ -48,6 +48,4 @@ const collections = {
       }
     ]
   }
-};
-
-export default collections;
+}

@@ -1,5 +1,4 @@
 import {LitElement, html, css} from 'lit-element';
-import collections from './collections';
 import './gallery-collection';
 
 class PageGallery extends LitElement {
@@ -9,7 +8,6 @@ class PageGallery extends LitElement {
     this.name = '';
     this.description = '';
     this.images = [];
-
   }
 
   static get properties() {
@@ -21,21 +19,38 @@ class PageGallery extends LitElement {
     }
   }
 
-  attributeChangedCallback(name, oldval, newval) {
-    super.attributeChangedCallback(name, oldval, newval);
-    if (name === 'id') {
+  attributeChangedCallback(name, oldValue, newValue) {
+    super.attributeChangedCallback(name, oldValue, newValue);
+    if (name === 'id' && Number.isInteger(parseInt(newValue)) && oldValue !== newValue) {
       this.getCollectionData();
     }
   }
 
   getCollectionData() {
-    if (this.id in collections) {
-      const collection = collections[this.id];
-      this.name = collection.name || '';
-      this.description = collection.description || '';
-      this.images = collection.images || [];
+    const id = this.id;
+    const url = '/data/collections.json';
 
-    };
+    fetch(url)
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          throw new Error(`Request for ${response.url} failed with status code ${response.status}.`);
+        }
+      })
+
+      .then(data => {
+        if (id in data) {
+          const collection = data[id];
+          this.name = collection.name || '';
+          this.description = collection.description || '';
+          this.images = collection.images || [];
+        } else {
+          throw new Error(`Collection with id ${id} does not exist in ${url}.`);
+        }
+      })
+
+      .catch(error => console.error(error));
   }
 
   render() {
