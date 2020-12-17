@@ -18,10 +18,25 @@ class GalleryImage extends LitElement {
     };
   }
 
+  handleLoad(event) {
+    const imageLoaded = new CustomEvent('gallery-image-loaded', {
+      detail: {
+        message: 'An image was loaded by gallery-image.js.'
+      },
+      bubbles: true,
+      composed: true
+    });
+    this.dispatchEvent(imageLoaded);
+  }
+
   render() {
     return html`
       <figure class="gallery-image">
-        <img src="${this.url}" alt="picture of ${this.artist} on unsplash.com" class="image">
+        <img 
+            src="${this.url}"
+            alt="picture of ${this.artist} on unsplash.com"
+            class="image"
+            @load="${this.handleLoad}"
         <figcaption>
           <blockquote class="image-caption">
              <p class="description">${this.description}</p>
