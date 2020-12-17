@@ -20,6 +20,7 @@ module.exports = {
       patterns: [
         { from: "src/index.html", to: "." },
         { from: "src/service-worker.js", to: "." },
+        { from: "img/", to: "img/" },
       ],
     }),
   ],
