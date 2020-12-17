@@ -39,8 +39,7 @@ class PageGallery extends LitElement {
   }
 
   render() {
-    return html`
-      <h1>Gallery ${this.id}</h1>              
+    return html`              
       <gallery-collection 
         name="${this.name}"
         description="${this.description}"

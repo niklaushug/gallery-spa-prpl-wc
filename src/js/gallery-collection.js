@@ -1,5 +1,6 @@
 import {LitElement, css, html} from 'lit-element';
 import './gallery-image';
+import {readableParagraph} from './styles'
 
 class GalleryCollection extends LitElement {
   constructor() {
@@ -34,9 +35,11 @@ class GalleryCollection extends LitElement {
 
   render() {
     return html`
-      <div class="gallery-collection">              
-        <h2>${this.name}</h2>
-        <p>${this.description}</p>
+      <div class="gallery-collection">
+        <div class="text">            
+          <h1>${this.name}</h1>
+          <p class="_readable">${this.description}</p>
+        </div>
         <div class="layout">               
           ${this.images.map((item) => html`
             <gallery-image
@@ -52,7 +55,13 @@ class GalleryCollection extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return css`  
+      .gallery-collection > .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+      }    
+
       .gallery-collection > .layout { 
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -70,6 +79,8 @@ class GalleryCollection extends LitElement {
           grid-template-columns: repeat(3, 1fr);
        }
       }
+      
+      ${readableParagraph()}   
     `;
   }
 }
