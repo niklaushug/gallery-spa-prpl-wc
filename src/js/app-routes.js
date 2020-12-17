@@ -51,8 +51,7 @@ class AppRoutes extends router(LitElement) {
 
   render() {
     return html`
-      <app-layout active-route=${this.route}>
-          ${this.extendTopRegion()}            
+      <app-layout active-route=${this.route}>        
           <page-home route='home'></page-home>
           <page-info route='info'></page-info>
           <page-gallery route='gallery' id="${this.params.id}"></page-gallery>
