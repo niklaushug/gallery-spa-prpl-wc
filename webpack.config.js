@@ -5,10 +5,10 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    'base': './src/base.js',
-    'page-home': './src/page-home.js',
-    'page-info': './src/page-info.js',
-    'page-gallery': './src/page-gallery.js',
+    'base': './src/js/base.js',
+    'page-home': './src/js/page-home.js',
+    'page-info': './src/js/page-info.js',
+    'page-gallery': './src/js/page-gallery.js',
   },
   output: {
     filename: '[name].js',
@@ -19,8 +19,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/index.html", to: "." },
-        { from: "src/service-worker.js", to: "." },
-        { from: "img/", to: "img/" },
+        { from: "src/js/service-worker.js", to: "." },
+        { from: "src/img/", to: "img/" },
       ],
     }),
   ],
