@@ -2,6 +2,8 @@ import {LitElement, css, html} from 'lit-element';
 import './gallery-image';
 import {readableParagraph} from './styles'
 
+const SLICE_SIZE = 3;
+
 class GalleryCollection extends LitElement {
   constructor() {
     super();
@@ -23,6 +25,9 @@ class GalleryCollection extends LitElement {
       url: 'https://via.placeholder.com/300x150',
     }];
     this.name = '[name]';
+    this.imagesRemaining = [];
+    this.imagesLoading = [];
+    this.imagesLoadingCount = SLICE_SIZE;
   }
 
   static get properties() {
@@ -33,6 +38,40 @@ class GalleryCollection extends LitElement {
     };
   }
 
+
+  set images(val) {
+    let oldValue = this.images;
+    this._images = val;
+    this.imagesLoading = val.slice(0, SLICE_SIZE);
+    this.imagesRemaining = val.slice(SLICE_SIZE);
+    this.imagesLoadingCount = SLICE_SIZE;
+    this.requestUpdate('images', oldValue);
+  }
+
+  get images() {
+    return this._images;
+  }
+
+  set imagesLoadingCount(val) {
+    let oldValue = this.imagesLoadingCount
+    if (val !== 0) {
+      this._imagesLoadingCount = val;
+    } else {
+      this._imagesLoadingCount = SLICE_SIZE;
+      this.imagesLoading = [...this.imagesLoading, ...this.imagesRemaining.slice(0, SLICE_SIZE)];
+      this.imagesRemaining = this.imagesRemaining.slice(SLICE_SIZE);
+      this.requestUpdate('imagesLoadingCount', oldValue);
+    }
+  }
+
+  get imagesLoadingCount() {
+    return this._imagesLoadingCount;
+  }
+
+  handleGalleryImageLoaded(event) {
+    this.imagesLoadingCount--;
+  }
+
   render() {
     return html`
       <div class="gallery-collection">
@@ -40,8 +79,8 @@ class GalleryCollection extends LitElement {
           <h1>${this.name}</h1>
           <p class="_readable">${this.description}</p>
         </div>
-        <div class="layout">               
-          ${this.images.map((item) => html`
+        <div class="layout" @gallery-image-loaded="${this.handleGalleryImageLoaded}">               
+          ${this.imagesLoading.map((item) => html`
             <gallery-image
               artist="${item.artist}"
               artistLink="${item.artistLink}"
