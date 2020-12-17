@@ -10,7 +10,8 @@ class AppLayout extends outlet(LitElement) {
         <app-link href="/">Home</app-link>
         <app-link href="/info">Info</app-link>
         <app-link href="/gallery/1">Gallery 1</app-link>
-        <app-link href="/gallery/2">Gallery 2</app-link>        
+        <app-link href="/gallery/2">Gallery 2</app-link>
+        <app-link href="/gallery/3">Gallery 3</app-link>        
       </div>
             
       <slot name="region-top"></slot>
