@@ -14,7 +14,7 @@
             box-shadow:
                 inset 0 40px 0 darkolivegreen,
                 inset 0 -10px 0 darkolivegreen;
-            font-family: Verdana, sans-serif;
+            font-family: Merriweather, "Times New Roman", serif;
             min-height: 100%;
             margin: 0;
         }
@@ -35,18 +35,35 @@
     <template id="route-home">
         <script defer="defer" src="/page-home.js"></script>
         <link rel="preload" href="/img/camera-retro-solid.svg" as="image">
+
+        <link rel="preload" href="/font/merriweather-400-normal-latin.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/font/merriweather-700-normal-latin.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="/css/merriweather-normal-latin.css">
+
         <link rel="prefetch" href="/page-info.js" as="script">
         <link rel="prefetch" href="/page-gallery.js" as="script">
     </template>
 
     <template id="route-info">
         <script defer="defer" src="/page-info.js"></script>
+
+        <link rel="preload" href="/font/merriweather-400-normal-latin.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/font/merriweather-700-normal-latin.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="/css/merriweather-normal-latin.css">
+
         <link rel="prefetch" href="/page-home.js" as="script">
         <link rel="prefetch" href="/page-gallery.js" as="script">
     </template>
 
     <template id="route-gallery">
         <script defer="defer" src="/page-gallery.js"></script>
+
+        <link rel="preload" href="/font/merriweather-400-normal-latin.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/font/merriweather-400-italic-latin.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/font/merriweather-700-normal-latin.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="/css/merriweather-normal-latin.css">
+        <link rel="stylesheet" href="/css/merriweather-italic-latin.css">
+
         <link rel="prefetch" href="/page-home.js" as="script">
         <link rel="prefetch" href="/page-info.js" as="script">
     </template>

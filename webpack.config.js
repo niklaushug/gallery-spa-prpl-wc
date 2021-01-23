@@ -18,12 +18,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
+        { from: "src/css/", to: "css/" },
+        { from: "src/data/", to: "data/" },
+        { from: "src/font/", to: "font/" },
+        { from: "src/galleryapp.webmanifest", to: "." },
+        { from: "src/img/", to: "img/" },
         { from: "src/index.html", to: "." },
         { from: "src/index.html", to: "200.html" },
-        { from: "src/galleryapp.webmanifest", to: "." },
         { from: "src/js/service-worker.js", to: "." },
-        { from: "src/img/", to: "img/" },
-        { from: "src/data/", to: "data/" },
       ],
     }),
   ],

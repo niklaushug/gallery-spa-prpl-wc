@@ -6,8 +6,7 @@ class PageHome extends LitElement {
     return html`
       <div class="layout">
         <img src="/img/camera-retro-solid.svg" alt="Logo" class="logo">
-        <h1>Home</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa delectus, dolor eos excepturi molestiae nemo odit qui quo reiciendis voluptates. Animi dignissimos iusto maxime obcaecati omnis possimus quasi recusandae veritatis.</p>
+        <h1>Gallery App</h1>
       </div>
     `;
   }
