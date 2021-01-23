@@ -22,6 +22,25 @@
 </head>
 <body>
     <app-routes></app-routes>
+
+    <template id="route-home">
+        <script defer="defer" src="/page-home.js"></script>
+        <link rel="preload" href="/img/camera-retro-solid.svg" as="image">
+        <link rel="prefetch" href="/page-info.js" as="script">
+        <link rel="prefetch" href="/page-gallery.js" as="script">
+    </template>
+
+    <template id="route-info">
+        <script defer="defer" src="/page-info.js"></script>
+        <link rel="prefetch" href="/page-home.js" as="script">
+        <link rel="prefetch" href="/page-gallery.js" as="script">
+    </template>
+
+    <template id="route-gallery">
+        <script defer="defer" src="/page-gallery.js"></script>
+        <link rel="prefetch" href="/page-home.js" as="script">
+        <link rel="prefetch" href="/page-info.js" as="script">
+    </template>
 </body>
 </html>
 

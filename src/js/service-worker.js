@@ -4,10 +4,7 @@ const cacheName = 'gallery-spa-prpl-wc-v1.0.0';
 
 const contentToCache = [
   '/index.html',
-  '/base.js',
-  '/page-home.js',
-  '/page-info.js',
-  '/page-gallery.js'
+  '/base.js'
 ];
 
 // Cache files before installing service worker.
