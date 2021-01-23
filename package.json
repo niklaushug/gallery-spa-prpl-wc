@@ -1,7 +1,7 @@
 {
   "name": "gallery-spa-prpl-wc",
   "version": "1.0.0",
-  "description": "Gallery SPA consist of Lit Element based Web Components. It implements the methodology PRPL to get interaction readiness as early as possible.",
+  "description": "Gallery SPA consist of Lit Element based on Web Components. It implements the methodology PRPL to get interaction readiness as early as possible.",
   "main": "index.js",
   "scripts": {
     "start": "npm run server & npm run watch",
