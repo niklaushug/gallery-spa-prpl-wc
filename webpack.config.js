@@ -19,6 +19,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/index.html", to: "." },
+        { from: "src/index.html", to: "200.html" },
         { from: "src/galleryapp.webmanifest", to: "." },
         { from: "src/js/service-worker.js", to: "." },
         { from: "src/img/", to: "img/" },
