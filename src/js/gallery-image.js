@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit-element';
 import './gallery-lightbox';
 
+const IMAGE_WIDTH = 500;
+
 class GalleryImage extends LitElement {
   constructor() {
     super();
@@ -36,7 +38,7 @@ class GalleryImage extends LitElement {
     return html`
       <figure class="gallery-image">
         <img 
-          src="${this.url}"
+          src="${this.url}?w=${IMAGE_WIDTH}"
           alt="picture of ${this.artist} on unsplash.com"
           class="image"
           @click="${this.handleChildComponent}"

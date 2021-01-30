@@ -1,6 +1,9 @@
 import { LitElement, css, html } from 'lit-element';
 import { styleMap } from 'lit-html/directives/style-map';
 
+const IMAGE_MAX_WIDTH = 2000;
+const IMAGE_MAX_HEIGHT = 2000;
+
 class GalleryLightbox extends LitElement {
   constructor() {
     super();
@@ -33,7 +36,7 @@ class GalleryLightbox extends LitElement {
         })}">
         <img 
           class="image"
-          src="${this.url}">                            
+          src="${this.url}?fit=clip&w=${IMAGE_MAX_WIDTH}&h=${IMAGE_MAX_HEIGHT}">                            
       </div>
     `;
   }

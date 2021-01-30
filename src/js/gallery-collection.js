@@ -119,6 +119,12 @@ class GalleryCollection extends LitElement {
        }
       }
       
+      @media (min-width: 1500px) {
+       .gallery-collection > .layout { 
+          grid-template-columns: repeat(4, 1fr);
+       }
+      }    
+      
       ${readableParagraph()}   
     `;
   }
