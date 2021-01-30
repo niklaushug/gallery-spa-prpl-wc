@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit-element';
+import './gallery-lightbox';
 
 class GalleryImage extends LitElement {
   constructor() {
     super();
     this.artist = '[artist]';
-    this.artistLink = '[artistLink]';
     this.description = '[description]';
     this.url = 'https://via.placeholder.com/300';
   }
@@ -12,7 +12,6 @@ class GalleryImage extends LitElement {
   static get properties() {
     return {
       artist: { type: String },
-      artistLink: { type: String },
       description: { type: String },
       url: { type: String },
     };
@@ -29,21 +28,27 @@ class GalleryImage extends LitElement {
     this.dispatchEvent(imageLoaded);
   }
 
+  handleChildComponent() {
+    this.shadowRoot.querySelector('gallery-lightbox').handleOpen();
+  }
+
   render() {
     return html`
       <figure class="gallery-image">
         <img 
-            src="${this.url}"
-            alt="picture of ${this.artist} on unsplash.com"
-            class="image"
-            @load="${this.handleLoad}"
+          src="${this.url}"
+          alt="picture of ${this.artist} on unsplash.com"
+          class="image"
+          @click="${this.handleChildComponent}"
+          @load="${this.handleLoad}">
         <figcaption>
           <blockquote class="image-caption">
              <p class="description">${this.description}</p>
              <cite class="person">- ${this.artist}</cite>          
           </blockquote>
-        </figcaption>      
+        </figcaption>
       </figure>
+      <gallery-lightbox .url="${this.url}" />
     `;
   }
 
@@ -70,7 +75,7 @@ class GalleryImage extends LitElement {
       .image-caption > .person {
         text-align: right;
         display: block;
-      }      
+      }   
     `;
   }
 }
