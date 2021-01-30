@@ -34,9 +34,11 @@ class GalleryLightbox extends LitElement {
         style="${styleMap({
           display: this.showLightbox ? 'flex' : 'none'
         })}">
-        <img 
-          class="image"
-          src="${this.url}?fit=clip&w=${IMAGE_MAX_WIDTH}&h=${IMAGE_MAX_HEIGHT}">                            
+        ${this.showLightbox ? html`
+          <img 
+            class="image"
+            src="${this.url}?fit=clip&w=${IMAGE_MAX_WIDTH}&h=${IMAGE_MAX_HEIGHT}">
+        ` : null}
       </div>
     `;
   }
