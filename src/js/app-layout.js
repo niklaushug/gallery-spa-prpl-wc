@@ -34,9 +34,9 @@ class AppLayout extends outlet(LitElement) {
       .app-layout > .bar {
         background-color: darkolivegreen;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
-        height: 40px;
       }
     
       .app-layout > .content {
